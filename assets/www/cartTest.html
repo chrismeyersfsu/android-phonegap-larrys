@@ -1,0 +1,45 @@
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Demo</title>
+
+</head>
+<body>
+<script src="jquery-1.6.2.min.js"></script>
+<script src="jquery.metadata.js"></script>
+<script src="jshashtable-2.1.js"></script>
+<script src="cart.js"></script>
+
+<script>
+var myCart = new Cart();
+
+function displayCart() {
+	var str = myCart.debugCart2String();
+	alert("Cart contents: " + str);
+}
+
+function addToCart() {
+	var itemList = [1,2,3];
+	var priceList = [4.45,3.43,2.45];
+	myCart.addItem('hello', 1, 34.45);
+	myCart.addItems('hello', itemList, priceList);
+	displayCart();
+}
+
+function removeFromCart() {
+	myCart.popItem('hello', 1);
+	//myCart.popAllItems('hello', 1);
+	displayCart();
+}
+
+</script>
+<p>
+<a OnClick="addToCart()">addToCart</a>
+</p>
+<p>
+<a OnClick="removeFromCart()">removeFromCart</a>
+</p>
+</body>
+</html>
