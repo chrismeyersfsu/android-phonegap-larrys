@@ -1,0 +1,17 @@
+== Overview ==
+
+Larry's Giant Subs interactive sub builder using phone gap.
+
+== Dependency ==
+
+* Eclipse with Android environment
+* <a href="https://github.com/chrismeyersfsu/web_larrys">web_larrys</a> repository (for the api server component)
+
+== Setup and Run ==
+
+</p>Import into eclipse.</p>
+<p>Set the ip address of <a href="https://github.com/chrismeyersfsu/web_larrys">web_larrys</a>  <code>server.pl</code> script.  In the file <code>assets/www/conf.js</code> edit the variable <code>$Code['baseUrl']</code>.</p>
+<p>For example:</p>
+<pre>
+$Conf['baseUrl'] = "http://192.168.1.107:8080";
+</pre>
