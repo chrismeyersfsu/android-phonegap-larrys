@@ -231,12 +231,16 @@ function additivesInflateList(listName, results) {
 }
 /** *********************************************** */
 
+/**
+ * Selected a sub sandwich.
+ * Generate and display the ingredients list.
+ */
 function selectSub(event) {
 	// alert("Sub selected");
 	subItemClicked = event.data.element.jqmData(itemDataKey);
-
-	$.mobile.changePage("#additives", "pop", false, true);
-
+	console.log("Sub clicked on " + JSON.stringify(subItemClicked));
+	$.mobile.changePage("#additives", { transition: "pop" });
+	
 	var listName = 'listAdditives';
 	var list = $('#' + listName);
 	var results = {};
@@ -311,13 +315,15 @@ function onClickAddItem(event) {
 }
 
 $(document).ready(function() {
-	// $('#condimentsLink').click(function() {
-	// $.mobile.changePage("#additives", "pop", false, true);
-
-	// });
+//	var menuLink = $('#menuLink');
+//	
+//	$(menuLink).on("pagebeforeshow", function(event) {
+//		
+//	});
 
 	$('#menuLink').click(function() {
-		$.mobile.changePage("#menu", "pop", false, true);
+		$.mobile.changePage("#menu", { transition: "pop" });
+
 		var listName = 'list';
 		var list = $('#' + listName);
 		var results = {};
@@ -342,7 +348,8 @@ $(document).ready(function() {
 	}); // #menuLink click
 
 	$('#cartLink').click(function() {
-		$.mobile.changePage("#cart", "pop", false, true);
+		$.mobile.changePage("#cart", { transition: "pop" });
+
 		var listName = 'cartList';
 		var list = $('#' + listName);
 		list.html('');
