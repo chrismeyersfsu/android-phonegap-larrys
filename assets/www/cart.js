@@ -205,7 +205,7 @@ function getRequestUnparsed(reqKey, reqValue, callbackFunc) {
 		return;
 	}
 	
-  	$.getJSON('http://chrismeyers.org/larrys/cgi-bin/items.pl?'+reqKey+'='+reqValue+"&callback=?", function(data) {
+  	$.getJSON($Conf['baseUrl']+'/items.pl?'+reqKey+'='+reqValue+"&callback=?", function(data) {
 		RequestCache.put(key, data);
 		callbackFunc(reqKey, reqValue, data);
 	}); // JSON
@@ -223,7 +223,7 @@ function getRequest(reqKey, reqValue, callbackFunc) {
 		return;
 	}
 	
-  	$.getJSON('http://chrismeyers.org/larrys/cgi-bin/items.pl?'+reqKey+'='+reqValue+"&callback=?", function(data) {
+  	$.getJSON($Conf['baseUrl']+'/items.pl?'+reqKey+'='+reqValue+"&callback=?", function(data) {
 		$.each(data, function(i, item) {
 			var entry = {};
 			$.each(item, function(j, k) {

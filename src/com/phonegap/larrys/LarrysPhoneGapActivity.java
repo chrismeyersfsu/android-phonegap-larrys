@@ -2,7 +2,7 @@ package com.phonegap.larrys;
 
 import android.os.Bundle;
 
-import com.phonegap.*;
+import org.apache.cordova.DroidGap;
 
 public class LarrysPhoneGapActivity extends DroidGap {
     /** Called when the activity is first created. */
